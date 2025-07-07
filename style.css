@@ -34,3 +34,35 @@ textarea {
   resize: none;
   margin-bottom: 15px;
 }
+
+button {
+  background-color: #4a47a3;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #35329c;
+}
+
+#resultado-palavrachave {
+  margin-top: 20px;
+  font-size: 15px;
+  background-color: #eef0ff;
+  padding: 15px;
+  border-radius: 8px;
+  color: #333;
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+#resultado-palavrachave.show {
+  opacity: 1;
+}
+
+
