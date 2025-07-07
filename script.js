@@ -15,6 +15,7 @@ botao.addEventListener('click', () => {
     frequencias[palavra] = (frequencias[palavra] || 0) + 1;
   }
 
+ 
   const top10 = Object.entries(frequencias)
     .sort((a, b) => b[1] - a[1])
     .slice(0, 10)
@@ -23,4 +24,5 @@ botao.addEventListener('click', () => {
   resultado.textContent = `🔹 Top 10 Palavras:\n${top10.join(', ')}`;
   resultado.classList.add('show');
 });
+
 
