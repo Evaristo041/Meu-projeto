@@ -5,24 +5,18 @@ const resultado = document.querySelector('#resultado-palavrachave');
 
 botao.addEventListener('click', () => {
   const texto = document.querySelector('#entrada-de-texto').value;
+
   const palavras = texto
     .toLowerCase()
     .split(/[^a-zA-ZÀ-ÿ]+/)
     .filter(p => p.length > 2 && !PALAVRAS_RUINS.has(p));
 
-  const frequencias = {};
-  for (const palavra of palavras) {
-    frequencias[palavra] = (frequencias[palavra] || 0) + 1;
-  }
+  const unicas = [...new Set(palavras)];
 
- 
-  const top10 = Object.entries(frequencias)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 10)
-    .map(([palavra]) => palavra);
+  resultado.textContent = unicas.length > 0
+    ? `🔹 Palavras boas encontradas:\n${unicas.join(', ')}`
+    : "⚠️ Nenhuma palavra válida encontrada.";
 
-  resultado.textContent = `🔹 Top 10 Palavras:\n${top10.join(', ')}`;
   resultado.classList.add('show');
 });
-
 
